@@ -3,10 +3,10 @@
 
 '''Main method for Pacman'''
 
-from .Game import Game
-from .GameMaze import GameMaze
-from .Ghost import Ghost
-from .Utils import clear, argumentParser, getch
+from game import Game
+from gameMaze import GameMaze
+from ghost import Ghost
+from utils import clear, argumentParser, getch
 
 def main():
 	(sizeX, sizeY, difficulty) = argumentParser()

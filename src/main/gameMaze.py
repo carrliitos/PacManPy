@@ -7,7 +7,7 @@ class GameMaze(object):
 		wall = 'X',
 		ghost = 'G',
 		pacman = 'P',
-		coint = 'C',
+		coin = 'C',
 		nothing = '.',
 		coinghost = 'CG'
 		)
@@ -42,7 +42,7 @@ class GameMaze(object):
 		else:
 			self.fillWall()
 
-		self.gameMaze[self.sizeY * 3 / 4][self.sizeX / 2] = GameMaze.MAZE['pacman']
+		self.gameMaze[self.sizeY * 3 // 4][self.sizeX // 2] = GameMaze.MAZE['pacman']
 		self.fillCoin([x[:] for x in [[0] * self.sizeX] * self.sizeY])
 
 	def placeEnemy(self):
@@ -104,7 +104,7 @@ class GameMaze(object):
 		self.freeSpace.add(gamePoint)
 		visited[gamePoint[1]][gamePoint[0]] = True
 		if randint(0, 2) == 0: # Probabilisticly fill with coin
-			self.makeCoint(gamePoint)
+			self.makeCoin(gamePoint)
 			self.coinCount = self.coinCount + 1
 
 		self.fillCoin(visited, (gamePoint[0], gamePoint[1] + 1))
@@ -130,6 +130,10 @@ class GameMaze(object):
 
 	def makeWall(self, gamePoint):
 		'''Makes the wall'''
+		self.setAttribute(gamePoint, GameMaze.MAZE['wall'])
+
+	def makeCoin(self, gamePoint):
+		'''Makes the coint on point'''
 		self.setAttribute(gamePoint, GameMaze.MAZE['coin'])
 
 	def __str__(self):

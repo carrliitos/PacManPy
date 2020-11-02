@@ -1,4 +1,4 @@
-from .Person import Person
+from person import Person
 
 class Pacman(Person):
 	'''Generic Pacman object'''

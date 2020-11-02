@@ -1,5 +1,5 @@
 from random import randint
-from .Person import Person
+from person import Person
 
 class Ghost(Person):
 	'''AI based Ghost with a greedy approach'''

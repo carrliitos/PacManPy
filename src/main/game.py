@@ -1,7 +1,7 @@
-from .Gamemaze import GameMaze
-from .Pacman import Pacman
-from .Exceptions import KillGhostException
-from .Exceptions import KillPlayerException
+from gameMaze import GameMaze
+from pacman import Pacman
+from exceptions import KillGhostException
+from exceptions import KillPlayerException
 
 class Game(object):
 	'''

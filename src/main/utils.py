@@ -60,15 +60,15 @@ def difficultyParser():
 def argumentParser():
 	'''Parse arguments from the commandline'''
 	parser = argparse.ArgumentParser()
-	parser.add_argument("--legacy", action = 'store_true')
-	parser.add_argument('-d', '--difficulty', type = int, help = "Enter the difficulty [0-10]", default = 4)
-    parser.add_argument('-x', '--size-x', type = int, help = "Enter the width", default = 35)
-    parser.add_argument('-y', '--size-y', type = int, help = "Enter the height", default = 15)
-    args = parser.parse_args()
+	parser.add_argument("--legacy", action='store_true')
+	parser.add_argument('-d', '--difficulty', type=int, help="Enter the difficulty [0-10]", default=4)
+	parser.add_argument('-x', '--size-x', type=int, help="Enter the width", default=35)
+	parser.add_argument('-y', '--size-y', type=int, help="Enter the height", default=15)
+	args = parser.parse_args()
 
-    if args.legacy:
-    	sizeX, sizeY = sizeParser()
-    	difficulty = difficultyParser()
-    	return (sizeX, sizeY, difficulty)
+	if args.legacy:
+		sizeX, sizeY = sizeParser()
+		difficulty = difficultyParser()
+		return (sizeX, sizeY, difficulty)
 
-    return (args.sizeX, args.sizeY, args.difficulty)
+	return (args.sizeX, args.sizeY, args.difficulty)
