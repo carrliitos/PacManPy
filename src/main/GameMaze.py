@@ -30,10 +30,10 @@ class GameMaze(object):
 		self.gameMaze = [x[:] for x in [['.'] * self.sizeX] * self.sizeY]
 		self.freeSpace = set()
 
-		for i in xrange(0, self.sizeY):
+		for i in range(0, self.sizeY):
 			for j in [0, self.sizeX - 1]:
 				self.gameMaze[i][j] = GameMaze.MAZE['wall']
-		for i in xrange(0, self.sizeX):
+		for i in range(0, self.sizeX):
 			for j in [0, self.sizeY - 1]:
 				self.gameMaze[j][i] = GameMaze.MAZE['wall']
 
