@@ -26,8 +26,8 @@ def clear(clearNum = 100):
 
 def sizeParser():
 	try:
-		sizeX = int(raw_input("Enter the size X (odd number)\n>"))
-		sizeY = int(raw_input("Enter the size Y (odd number)\n>"))
+		sizeX = int(input("Enter the size X (odd number)\n>"))
+		sizeY = int(input("Enter the size Y (odd number)\n>"))
 		if sizeX < 8 or sizeY < 8:
 			print("Larger values please!")
 			raise ValueError()
@@ -45,7 +45,7 @@ def sizeParser():
 
 def difficultyParser():
 	try:
-		difficulty = int(raw_input("Enter the difficulty level(# of Ghosts)\n>"))
+		difficulty = int(input("Enter the difficulty level(# of Ghosts)\n>"))
 		if difficulty < 0:
 			print("No difficulty? No way!")
 			raise ValueError()
@@ -60,15 +60,15 @@ def difficultyParser():
 def argumentParser():
 	'''Parse arguments from the commandline'''
 	parser = argparse.ArgumentParser()
-	parser.add_argument("--legacy", action='store_true')
+	# parser.add_argument("--legacy", action='store_true')
 	parser.add_argument('-d', '--difficulty', type=int, help="Enter the difficulty [0-10]", default=4)
-	parser.add_argument('-x', '--size-x', type=int, help="Enter the width", default=35)
-	parser.add_argument('-y', '--size-y', type=int, help="Enter the height", default=15)
+	parser.add_argument('-x', '--sizeX', type=int, help="Enter the width", default=35)
+	parser.add_argument('-y', '--sizeY', type=int, help="Enter the height", default=15)
 	args = parser.parse_args()
 
-	if args.legacy:
-		sizeX, sizeY = sizeParser()
-		difficulty = difficultyParser()
-		return (sizeX, sizeY, difficulty)
+	# if args.legacy:
+	# 	sizeX, sizeY = sizeParser()
+	# 	difficulty = difficultyParser()
+	# 	return (sizeX, sizeY, difficulty)
 
 	return (args.sizeX, args.sizeY, args.difficulty)

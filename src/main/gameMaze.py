@@ -2,7 +2,6 @@ from random import randint
 
 class GameMaze(object):
 	'''Main Maze module for the whole game'''
-
 	MAZE = dict(
 		wall = 'X',
 		ghost = 'G',
@@ -14,12 +13,12 @@ class GameMaze(object):
 
 	COLORS = dict(
 		wall = '\033[95m',
-        ghost = '\033[37m',
-        coin = '\033[33m',
-        pacman = '\033[91m',
-        coinghost = '\033[47m',
-        nothing = '\033[36m',
-        END = '\033[0m',
+		ghost = '\033[37m',
+		coin = '\033[33m',
+		pacman = '\033[91m',
+		coinghost = '\033[47m',
+		nothing = '\033[36m',
+		END = '\033[0m',
 		)
 
 	def __init__(self, randomMaze = False, size = (35, 15)):
@@ -52,7 +51,7 @@ class GameMaze(object):
 		while (self.checkWall((sizeX, sizeY)) is True 
 					and self.getAttribute((sizeX, sizeY)) != GameMaze.MAZE['coinghost'] 
 					and self.getAttribute((sizeX, sizeY)) != GameMaze.MAZE['ghost'] 
-					and self.getAttribute((sizeX, sizeY)) != GameMaze.Maze['coin'] 
+					and self.getAttribute((sizeX, sizeY)) != GameMaze.MAZE['coin'] 
 					and (sizeX, sizeY) not in self.freeSpace
 				):
 			sizeX = randint(1, self.sizeX - 1)

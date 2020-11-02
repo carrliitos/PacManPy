@@ -11,7 +11,7 @@ class Game(object):
 	def __init__(self, difficulty = 4, gameMaze = GameMaze(randomMaze = True), score = 0):
 		object.__init__(self)
 		self.difficulty = difficulty
-		self.gameMaze
+		self.gameMaze = gameMaze
 		self.ghosts = []
 		self.pacman = Pacman(
 			(gameMaze.sizeX / 2, gameMaze.sizeY * 3 / 4), score)
